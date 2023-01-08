@@ -1,13 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
+import HomePage from './assets/pages/homePage'
+import Header from './assets/layout/header'
+import Footer from './assets/layout/footer'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-
+      <Header />
+      <Routes>
+        <Route path='/' element={<HomePage />}></Route>
+      </Routes>
+      <Footer />
     </div>
   )
 }
