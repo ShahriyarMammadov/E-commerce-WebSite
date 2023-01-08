@@ -144,20 +144,137 @@ header {
             }
 
             .catalog {
+
+                .catalog2 {
+                    display: flex;
+
+                    .catalog-right {
+                        .img {
+                            display: flex;
+                            margin-top: 40px;
+
+                            .chakra-card {
+                                width: 200px;
+
+                                a {
+                                    color: rgb(73, 146, 188);
+
+                                    &:hover {
+                                        color: rgb(196, 54, 54);
+                                    }
+                                }
+
+                                .footer {
+                                    display: flex;
+
+                                    .icon {
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+
+                            .img1 {
+                                width: 120px;
+                                height: 120px;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-image: url('./images/catalog_right_sellers.jpg');
+
+                                &:hover {
+                                    background-size: 120%;
+                                }
+                            }
+
+                            .img2 {
+                                width: 120px;
+                                height: 120px;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-image: url('./images/catalog_right_sellers2.jpg');
+
+                                &:hover {
+                                    background-size: 120%;
+                                }
+                            }
+                        }
+
+                        .link {
+                            display: flex;
+                            gap: 12px;
+
+                            a {
+                                color: black;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+
                 .dropdown-content {
                     background-color: #FCFCFC;
                     width: 1530px;
                     left: -213px;
 
-                    a {
-                        width: 10%;
+                    a:hover {
+                        background-color: transparent;
+                        color: rgb(196, 54, 54);
                     }
 
-                    .top,.bottom {
+                    a {
+                        .chakra-card {
+                            width: 300px;
+                            padding: 0 !important;
+                            margin: 0 !important;
+
+                            .chakra-stack {
+
+                                a {
+                                    margin-left: -30px;
+                                    padding-bottom: 0;
+                                    padding-top: 0;
+                                    font-size: 15px;
+                                }
+
+                                img {
+                                    margin-top: 0;
+                                }
+
+                                .images {
+                                    display: flex;
+
+                                    a {
+                                        margin: 2px;
+                                        font-size: 13px !important;
+                                        opacity: 0.8;
+
+                                        &:hover {
+                                            opacity: 1;
+                                            color: black;
+                                            text-decoration: underline !important;
+                                        }
+                                    }
+
+                                    .all {
+                                        opacity: 1;
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    .top,
+                    .bottom {
                         display: flex;
-                        justify-content: space-around;
+                        justify-content: flex-start;
+                        margin-left: 20px;
                         align-items: center;
-                        padding: 15px 0;
+                    }
+
+                    img {
+                        width: 120px;
+                        height: 120px;
                     }
                 }
             }
