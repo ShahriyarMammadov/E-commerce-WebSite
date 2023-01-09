@@ -298,7 +298,7 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
-                    <Link className='blog'>BLOG</Link>
+                    <Link className='blog' to={'/sdf'}>BLOG</Link>
                 </div>
                 <div className="logo">
                     <Link to={'/'}><h1>JOURNAL</h1></Link>

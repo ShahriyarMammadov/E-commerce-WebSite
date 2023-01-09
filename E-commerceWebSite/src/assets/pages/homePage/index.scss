@@ -3,5 +3,73 @@ body {
     padding: 0;
     box-sizing: border-box;
     max-width: 1640px;
-    margin: 0 auto !important;  
+    margin: 0 auto !important;
+}
+
+#carousel {
+
+    .imagesCarousel1 {
+        background-image: url('./images/carousel_1.jpg');
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 650px;
+        background-size: cover;
+
+        h1 {
+            font-size: 65px;
+            font-weight: 600;
+            margin: 200px 0 0 100px;
+        }
+
+        button {
+            background-color: #FCFCFC;
+            color: black;
+            padding: 1%;
+            width: 220px;
+            margin: 40px 0 0 100px;
+        }
+    }
+
+    .imagesCarousel2 {
+        background-image: url('./images/carousel_2.jpg');
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 650px;
+        background-size: cover;
+
+        h1 {
+            font-size: 65px;
+            font-weight: 600;
+            margin: 200px 0 0 100px;
+        }
+
+        button {
+            background-color: #FCFCFC;
+            color: black;
+            padding: 1%;
+            width: 220px;
+            margin: 40px 0 0 100px;
+        }
+    }
+
+    .imagesCarousel3 {
+        background-image: url('./images/carousel_3.jpg');
+        width: 150px;
+        height: 650px;
+        background-size: cover;
+
+        h1 {
+            font-size: 65px;
+            font-weight: 600;
+            margin: 200px 0 0 100px;
+        }
+
+        button {
+            background-color: #FCFCFC;
+            color: black;
+            padding: 1%;
+            width: 180px;
+            margin: 40px 0 0 100px;
+        }
+    }
 }
