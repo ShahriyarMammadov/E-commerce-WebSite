@@ -1,0 +1,64 @@
+{
+    "cardData": [
+        {
+            "id": 1,
+            "productBrand": "Sarah Bell",
+            "ProductName": "Mascara Voluminous",
+            "Price": 652.00,
+            "image": {
+                "1": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/27-550x550.jpg",
+                "2": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/28-550x550.jpg",
+                "3": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/muller-550x550.jpg",
+                "4": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/15-550x550.jpg"
+            }
+        },
+        {
+            "id": 2,
+            "productBrand": "Chic D'or",
+            "ProductName": "Liquid Lipstick",
+            "Price": 321.00,
+            "image": {
+                "1": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/26-550x550.jpg",
+                "2": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/powder-550x550.jpg",
+                "3": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/powder-550x550.jpg",
+                "4": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/6-550x550.jpg"
+            }
+        },
+        {
+            "id": 3,
+            "productBrand": "Sarah Bloom",
+            "ProductName": "Powder Brush",
+            "Price": 579.00,
+            "image": {
+                "1": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/brush-550x550.jpg",
+                "2": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/brush-case-550x550.jpg",
+                "3": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/set3-550x550.jpg",
+                "4": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/set6-550x550.jpg"
+            }
+        },
+        {
+            "id": 4,
+            "productBrand": "Sarah Bell",
+            "ProductName": "Body Scrub",
+            "Price": 165.00,
+            "image": {
+                "1": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/14-550x550.jpg",
+                "2": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/11-550x550.jpg",
+                "3": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/15-550x550.jpg",
+                "4": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/8-550x550.jpg"
+            }
+        },
+        {
+            "id": 5,
+            "productBrand": "Sarah Bell",
+            "ProductName": "Hydrating Face Cream",
+            "Price": 248.00,
+            "image": {
+                "1": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/5-550x550.jpg",
+                "2": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/4-550x550.jpg",
+                "3": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/1-550x550.jpg",
+                "4": "https://www.journal-theme.com/11/image/cache/catalog/journal3/products/beauty/additional/20-550x550.jpg"
+            }
+        }
+    ]
+}

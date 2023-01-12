@@ -90,11 +90,19 @@ header {
 
 
     #headerBottom {
-        padding: 0 7%;
+        box-shadow: 0 4px 4px rgba(151, 144, 144, 0.785);
+        padding: 1% 8%;
         background-color: #FCFCFC;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        &.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
 
         .dropdown {
             button {
@@ -212,8 +220,8 @@ header {
 
                 .dropdown-content {
                     background-color: #FCFCFC;
-                    width: 1530px;
-                    left: -213px;
+                    width: 1500px;
+                    left: -220px;
 
                     a:hover {
                         background-color: transparent;

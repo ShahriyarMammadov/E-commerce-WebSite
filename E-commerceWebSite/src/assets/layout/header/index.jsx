@@ -27,6 +27,19 @@ const Header = () => {
         setActive(!active)
     }
 
+    window.onscroll = function () { myFunction() };
+
+    let header = document.getElementById("headerBottom");
+    let sticky = header?.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+
     return (
         <header>
             <div id="headerTop">
