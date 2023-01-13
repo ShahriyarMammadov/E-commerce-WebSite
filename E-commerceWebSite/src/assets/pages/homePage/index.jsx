@@ -5,7 +5,6 @@ import { Link, NavLink } from 'react-router-dom'
 import { FaAngleUp } from 'react-icons/fa';
 import { Outlet } from "react-router-dom"
 
-
 const HomePage = () => {
     const [topBtn, setTopBtn] = useState(false)
 
@@ -58,23 +57,37 @@ const HomePage = () => {
                     <NavLink to={'/'}>Featured</NavLink>
                     <NavLink to={'/newArrivals'}>New Arrivals</NavLink>
                     <NavLink to={'/bestSellers'}>Bestsellers</NavLink>
-                    <NavLink to={'/SpecialDeals'}>Special Deals</NavLink>
+                    <NavLink to={'/specialDeals'}>Special Deals</NavLink>
                     <NavLink to={'/sdf'}>View All</NavLink>
                 </div>
-                home
-                <div className="cardsSec2">
-                    <Card
-                        hoverable
-                        style={{
-                            width: 240,
-                        }}
-                        cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-                    >
-                        <Meta title="Europe Street beat" description="www.instagram.com" />
-                    </Card>
-                </div>
-                <Outlet />
 
+                <div className="cardsSec2">
+                    <Outlet />
+                </div>
+
+            </section>
+
+            <section id='section3'>
+                <div className="shipping">
+                    <i className="fa-solid fa-truck-fast"></i>
+                    <h3>Free Shipping</h3>
+                    <p>Free delivery over $100</p>
+                </div>
+                <div className="return">
+                    <i className="fa-solid fa-rotate-left"></i>
+                    <h3>Free Returns</h3>
+                    <p>Hassle free returns</p>
+                </div>
+                <div className="shopping">
+                    <i className="fa-solid fa-lock"></i>
+                    <h3>Secure Shopping Shipping</h3>
+                    <p>Best security features</p>
+                </div>
+                <div className="blocks">
+                    <i className="fa-solid fa-square"></i>
+                    <h3>Unlimited Blocks</h3>
+                    <p>Any content, any page</p>
+                </div>
             </section>
 
 

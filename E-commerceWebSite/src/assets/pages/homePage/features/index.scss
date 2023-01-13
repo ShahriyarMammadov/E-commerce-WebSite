@@ -1,0 +1,14 @@
+.featured {
+    width: 100%;
+    gap: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    padding-bottom: 4%;
+
+    a {
+        text-decoration: underline;
+        color: rgb(101, 181, 181);
+    }
+}

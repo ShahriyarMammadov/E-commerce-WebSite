@@ -6,7 +6,8 @@ import Footer from './assets/layout/footer'
 import ErrorPage from './assets/pages/errorPage'
 import BestSellers from './assets/pages/homePage/bestSellers'
 import NewArrivals from './assets/pages/homePage/newArrivals'
-import SpecialDeals from './assets/pages/homePage/SpecialDeals'
+import SpecialDeals from './assets/pages/homePage/specialDeals'
+import Featured from './assets/pages/homePage/features'
 
 function App() {
 
@@ -15,9 +16,10 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />}>
-          <Route path='bestSellers' element={<BestSellers />  } />
-          <Route path='newArrivals' element={<NewArrivals />  } />
-          <Route path='SpecialDeals' element={<SpecialDeals />  } />
+          <Route path='/bestSellers' element={<BestSellers />} />
+          <Route path='/' element={<Featured />} />
+          <Route path='/newArrivals' element={<NewArrivals />} />
+          <Route path='/specialDeals' element={<SpecialDeals />} />
         </Route>
         <Route path='*' element={<ErrorPage />}></Route>
       </Routes>
