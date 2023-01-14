@@ -1,0 +1,18 @@
+.categoryComponent {
+  justify-content: center;
+  text-align: center;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      a{
+        color: red;
+      }
+      img{
+        background-size: 120%;
+      }
+    }
+  }
+}
