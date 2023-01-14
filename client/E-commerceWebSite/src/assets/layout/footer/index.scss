@@ -1,103 +1,126 @@
 footer {
-    padding: 2% 5%;
-    display: flex;
+  padding: 2% 5%;
+  display: flex;
 
-    .journal {
-        margin-top: -20px;
+  .journal {
+    margin-top: -20px;
 
-        .logoFooter {
-            h1 {
-                font-size: 40px;
-                padding: 2% 0;
-                padding-bottom: 7%;
-            }
-        }
-
-        .location {
-            font-size: 18px;
-        }
-
-        .social {
-            display: flex;
-            width: 40%;
-            flex-wrap: wrap;
-
-            i {
-                font-size: 26px;
-                margin-top: 20px;
-                cursor: pointer;
-            }
-
-            span {
-                display: flex;
-                margin: 7px 0 0 6px;
-                justify-content: center;
-                align-items: center;
-
-                &:hover {
-                    color: red;
-                    cursor: pointer;
-                }
-            }
-        }
+    .logoFooter {
+      h1 {
+        font-size: 40px;
+        padding: 2% 0;
+        padding-bottom: 7%;
+      }
     }
 
-    .customer,
-    .account {
-        margin-left: 6%;
-
-        h3 {
-            font-size: 30px;
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-
-            a {
-                margin-top: 8%;
-
-                &:hover {
-                    color: red;
-                }
-            }
-        }
+    .location {
+      font-size: 18px;
     }
 
-    .account {
-        a {
-            margin-top: 18px !important;
+    .social {
+      display: flex;
+      width: 40%;
+      flex-wrap: wrap;
+
+      i {
+        font-size: 26px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      span {
+        display: flex;
+        margin: 7px 0 0 6px;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          color: red;
+          cursor: pointer;
         }
+      }
+    }
+  }
+
+  .customer,
+  .account {
+    margin-left: 6%;
+
+    h3 {
+      font-size: 30px;
     }
 
-    .newsLetter {
-        margin-left: 10%;
-        margin-top: 1.5%;
-        width: 25%;
+    .links {
+      display: flex;
+      flex-direction: column;
 
-        h3 {
-            font-size: 30px;
-            padding-bottom: 6%;
+      a {
+        margin-top: 8%;
+
+        &:hover {
+          color: red;
         }
-
-        .inputs {
-            margin-top: 6%;
-
-            input {
-                padding: 2%;
-                width: 75%;
-            }
-
-            button {
-                background-color: #08274D;
-                color: white;
-                padding: 2%;
-            }
-        }
-
-        .check {
-            display: flex;
-            margin-top: 6%;
-        }
+      }
     }
+  }
+
+  .account {
+    a {
+      margin-top: 18px !important;
+    }
+  }
+
+  .newsLetter {
+    margin-left: 10%;
+    margin-top: 1.5%;
+    width: 25%;
+
+    h3 {
+      font-size: 30px;
+      padding-bottom: 6%;
+    }
+
+    .inputs {
+      margin-top: 6%;
+
+      input {
+        padding: 2%;
+        width: 75%;
+      }
+
+      button {
+        background-color: #08274d;
+        color: white;
+        padding: 2%;
+      }
+    }
+
+    .check {
+      display: flex;
+      margin-top: 6%;
+    }
+  }
+}
+
+.footerBottom {
+  background-color: #3a4754;
+  color: #827d75;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 5%;
+  button {
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+  i {
+    font-size: 30px;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }

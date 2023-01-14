@@ -18,20 +18,18 @@ const Category = () => {
     setData(response.data);
   }, []);
 
-  console.log(GetData);
-
   return (
     <div className="categoryComponent">
       <Swiper
         spaceBetween={50}
-        slidesPerView={4}
+        slidesPerView={5}
         modules={[Navigation, EffectFade]}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         speed={1000}
         navigation
       >
-        {GetData?.featuredData?.map((e) => {
+        {Data.map((e) => {
           return (
             <SwiperSlide>
               <div className="card" key={e.id}>

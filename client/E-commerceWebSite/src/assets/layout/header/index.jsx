@@ -12,7 +12,6 @@ import food from './images/catalog_food.jpg'
 
 const Header = () => {
     const [first, setFirst] = useState('')
-    const [active, setActive] = useState(false)
 
     const handleChange = (e) => {
         localStorage.setItem('exchange', e.target.value)
@@ -23,9 +22,6 @@ const Header = () => {
         setFirst(localStorage.getItem('exchange'))
     }, [handleChange])
 
-    const wishListHeart = () => {
-        setActive(!active)
-    }
 
     window.onscroll = function () { myFunction() };
 
@@ -103,7 +99,6 @@ const Header = () => {
                                 <div className="catalog2">
                                     <div className="catalog-left">
                                         <div className="top">
-                                            <Link to={'/gsd'}>
                                                 <Card
                                                     direction={{ base: 'column', sm: 'row' }}
                                                     overflow='hidden'
@@ -125,8 +120,6 @@ const Header = () => {
                                                         </div>
                                                     </Stack>
                                                 </Card>
-                                            </Link>
-                                            <Link to={'/fjgn'}>
                                                 <Card
                                                     direction={{ base: 'column', sm: 'row' }}
                                                     overflow='hidden'
@@ -148,8 +141,6 @@ const Header = () => {
                                                         </div>
                                                     </Stack>
                                                 </Card>
-                                            </Link>
-                                            <Link to={'/adsaf'}>
                                                 <Card
                                                     direction={{ base: 'column', sm: 'row' }}
                                                     overflow='hidden'
@@ -171,10 +162,8 @@ const Header = () => {
                                                         </div>
                                                     </Stack>
                                                 </Card>
-                                            </Link>
                                         </div>
                                         <div className="bottom">
-                                            <Link to={'/freg'}>
                                                 <Card
                                                     direction={{ base: 'column', sm: 'row' }}
                                                     overflow='hidden'
@@ -196,8 +185,6 @@ const Header = () => {
                                                         </div>
                                                     </Stack>
                                                 </Card>
-                                            </Link>
-                                            <Link to={'/asd'}>
                                                 <Card
                                                     direction={{ base: 'column', sm: 'row' }}
                                                     overflow='hidden'
@@ -219,8 +206,6 @@ const Header = () => {
                                                         </div>
                                                     </Stack>
                                                 </Card>
-                                            </Link>
-                                            <Link to={'/asddf'}>
                                                 <Card
                                                     direction={{ base: 'column', sm: 'row' }}
                                                     overflow='hidden'
@@ -242,7 +227,6 @@ const Header = () => {
                                                         </div>
                                                     </Stack>
                                                 </Card>
-                                            </Link>
                                         </div>
 
                                     </div>
@@ -253,7 +237,6 @@ const Header = () => {
                                             <NavLink>SPECIAL DEALS</NavLink>
                                         </div>
                                         <div className="img">
-                                            <Link to={'/gsd'}>
                                                 <Card
                                                     direction={{ base: 'column', sm: 'row' }}
                                                     overflow='hidden'
@@ -268,18 +251,13 @@ const Header = () => {
                                                                 <Link>Add to Cart</Link>
                                                                 <div className="icon">
                                                                     <i className="fa-regular fa-heart"
-                                                                        style={active ? { color: 'red' } : { color: 'black' }}
-                                                                        onClick={() => {
-                                                                            wishListHeart()
-                                                                        }}></i>
+                                                                      ></i>
                                                                     <i className="fa-solid fa-arrow-right-arrow-left"></i>
                                                                 </div>
                                                             </div>
                                                         </CardBody>
                                                     </Stack>
                                                 </Card>
-                                            </Link>
-                                            <Link to={'/gsd'}>
                                                 <Card
                                                     direction={{ base: 'column', sm: 'row' }}
                                                     overflow='hidden'
@@ -293,18 +271,13 @@ const Header = () => {
                                                             <div className="footer">
                                                                 <Link>Add to Cart</Link>
                                                                 <div className="icon">
-                                                                    <i className="fa-regular fa-heart"
-                                                                        style={active ? { color: 'red' } : { color: 'black' }}
-                                                                        onClick={() => {
-                                                                            wishListHeart()
-                                                                        }}></i>
+                                                                    <i className="fa-regular fa-heart"></i>
                                                                     <i className="fa-solid fa-arrow-right-arrow-left"></i>
                                                                 </div>
                                                             </div>
                                                         </CardBody>
                                                     </Stack>
                                                 </Card>
-                                            </Link>
                                         </div>
                                     </div>
                                 </div>

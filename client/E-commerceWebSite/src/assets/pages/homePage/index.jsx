@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./index.scss";
-import { Carousel, Card } from "antd";
+import { Carousel, Card, Avatar } from "antd";
 import { Link, NavLink } from "react-router-dom";
 import { FaAngleUp } from "react-icons/fa";
 import { Outlet } from "react-router-dom";
 import Category from "./category";
+import card1 from "./images/sec5cardimg2.jpg";
+import card2 from "./images/sec5cardimg1.jpg";
+import card3 from "./images/sec5cardimg3.jpg";
+import card4 from "./images/sec5cardimg4.jpg";
+import cardleftimg from "./images/sec5img1.jpg";
+import BlogComponent from "./blogPost";
+import BrandsComponent from "./brands";
 
 const HomePage = () => {
   const [topBtn, setTopBtn] = useState(false);
@@ -107,7 +114,63 @@ const HomePage = () => {
       </section>
 
       <section id="section5">
-        
+        <div className="sec5Card">
+          <div className="left">
+            <div className="image">
+              <img src={cardleftimg} alt="" />
+            </div>
+            <p>Health & Beauty</p>
+          </div>
+
+          <div className="rightCard">
+            <div className="cards">
+              <div className="card1">
+                <img src={card1} alt="" />
+                <div className="text">
+                  <h6>Body Oil</h6>
+                  <p>$100.00</p>
+                </div>
+              </div>
+              <div className="card1">
+                <img src={card3} alt="" />
+                <div className="text">
+                  <h6>Body Oil</h6>
+                  <p>$100.00</p>
+                </div>
+              </div>
+              <div className="card1">
+                <img src={card4} alt="" />
+                <div className="text">
+                  <h6>Body Oil</h6>
+                  <p>$100.00</p>
+                </div>
+              </div>
+            </div>
+            <div className="card1">
+              <img src={card2} alt="" />
+              <div className="text">
+                <h6>Body Oil</h6>
+                <p>$100.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section6">
+        <div className="header">
+          <div className="title">Latest Blog Posts</div>
+          <div className="hr"></div>
+        </div>
+        <div className="body">
+          <BlogComponent />
+        </div>
+      </section>
+
+      <section id="section7">
+        <div className="blogs">
+          <BrandsComponent />
+        </div>
       </section>
 
       {topBtn && (

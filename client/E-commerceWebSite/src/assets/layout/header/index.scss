@@ -116,7 +116,6 @@ header {
             .dropdown-content {
                 font-size: 11px;
 
-                a {
                     button {
                         margin-left: 5px;
                         font-size: 10px;
@@ -130,7 +129,6 @@ header {
                     .new {
                         background-color: green;
                     }
-                }
             }
         }
 
@@ -228,7 +226,6 @@ header {
                         color: rgb(196, 54, 54);
                     }
 
-                    a {
                         .chakra-card {
                             width: 300px;
                             padding: 0 !important;
@@ -268,8 +265,6 @@ header {
                                     }
                                 }
                             }
-                        }
-
                     }
 
                     .top,

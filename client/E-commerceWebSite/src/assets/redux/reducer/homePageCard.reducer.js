@@ -1,10 +1,7 @@
 let initialState = {
   loading: true,
   error: undefined,
-  featuredData: undefined,
-  newArrrivalsData: undefined,
-  bestSellersData: undefined,
-  specialDealsData: undefined,
+  data: undefined,
 };
 
 export const cardReducer = (state = initialState, action) => {
@@ -22,28 +19,10 @@ export const cardReducer = (state = initialState, action) => {
         error: action.payload,
       };
 
-    case "FEATURED":
+    case "FULFILLED":
       return {
         loading: false,
-        featuredData: action.payload,
-      };
-
-    case "NEW_ARRAILS":
-      return {
-        loading: false,
-        newArrrivalsData: action.payload,
-      };
-
-    case "BEST_SELLERS":
-      return {
-        loading: false,
-        bestSellersData: action.payload,
-      };
-
-    case "SPECIAL_DEALS":
-      return {
-        loading: false,
-        specialDealsData: action.payload,
+        data: action.payload,
       };
 
     default:

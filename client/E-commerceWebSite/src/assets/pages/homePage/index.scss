@@ -197,3 +197,79 @@ body {
     }
   }
 }
+
+#section5 {
+  margin-top: 4%;
+  background-image: url("./images//backimgSec5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 90% 50%;
+
+  .sec5Card {
+    display: flex;
+    gap: 2%;
+
+    .left {
+      margin-top: 1.5%;
+      margin-left: 10%;
+      width: 80%;
+      overflow: hidden;
+      transform: 1;
+      img {
+        width: 100%;
+        transition: all 1s;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.08);
+        }
+      }
+      p {
+        background-color: #3a4754;
+        padding: 2% 0;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+      }
+    }
+    .rightCard {
+      margin-top: 1.5%;
+      .cards {
+        display: flex;
+        gap: 2%;
+      }
+      .text {
+        p {
+          color: red;
+        }
+      }
+      .card1 {
+        width: 29.5%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+#section6 {
+  .header {
+    padding: 2% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title {
+      font-size: 35px;
+    }
+    .hr {
+      width: 80px;
+      margin-top: 1%;
+      height: 4px;
+      background-color: #ef5042;
+    }
+  }
+}

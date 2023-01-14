@@ -2,6 +2,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 
 export const cardAction = (endpoint) => {
+    console.log(endpoint)
     return async (dispatch) => {
         dispatch({
             type: "PENDING",

@@ -5,7 +5,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import Loading from '../../../../components/loading';
 import { Outlet } from 'react-router-dom'
-import { specialDealsAction } from '../../../redux/action/specialDeals.action';
+import { cardAction } from '../../../redux/action/homePageCard.action';
 
 const SpecialDeals = () => {
 
@@ -13,7 +13,7 @@ const SpecialDeals = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(specialDealsAction())
+        dispatch(cardAction('specialDelas'))
     }, [])
 
     return (
@@ -22,7 +22,7 @@ const SpecialDeals = () => {
                 {GetData.loading ? (
                     <Loading />
                 ) : (
-                    GetData?.specialDealsData?.map((data) => {
+                    GetData?.data?.map((data) => {
                         return (
                             <Card
                                 loading={GetData.loading}

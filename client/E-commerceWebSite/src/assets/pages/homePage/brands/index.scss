@@ -1,0 +1,23 @@
+.ant-card-body {
+  h2 {
+    visibility: hidden;
+  }
+  img {
+    opacity: 0.6;
+    filter: grayscale(100%);
+  }
+
+  &:hover {
+    h2 {
+      text-align: center;
+      visibility: visible;
+      background-color: rgb(38, 177, 177);
+      color: white;
+    }
+    img {
+      opacity: 1;
+      filter: grayscale(0);
+      cursor: pointer;
+    }
+  }
+}

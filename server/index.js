@@ -270,10 +270,193 @@ let category = [
   },
 ];
 
+let blog = [
+  {
+    id: 1,
+    title: "Journal Blog is Here",
+    date: "02 Aug",
+    post: "The Journal 3 blog has been greatly improved and it now comes with the most advanced set of typography tools, including custom drop-cap support as well as optional newspaper-like fluid columns. You can break up the page in up to 4 columns and change the configuration per breakpoint for the best arti..",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/gallery/aiony-haust-667702-unsplash-1060x400w.jpg",
+    },
+  },
+  {
+    id: 2,
+    date: "02 Aug",
+    title: "Best Leather Bags",
+    post: "Best Opencart theme options you can find in any theme? Decide for yourself by visiting one our demo admin, user/pass: demo/demo. The Journal 3 blog has been greatly improved and it now comes with the most advanced set of typography tools, including custom drop-cap support as well as optional&nbsp;newspap..",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/gallery/demo28-1060x400w.jpg",
+    },
+  },
+  {
+    id: 3,
+    date: "02 Aug",
+    title: "Another Blog Post",
+    post: "Another blog post.&nbsp; Write unlimited blog articles, or have someone write them for you with partial admin access. The Journal 3 blog has been greatly improved and it now comes with the most advanced set of typography tools, including custom drop-cap support as well as optional&nbsp;newspaper-like fluid co..",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/gallery/backdrop003-1060x400w.jpg",
+    },
+  },
+  {
+    id: 4,
+    date: "26 Jul",
+    title: "Traveling to Greece",
+    post: "Travel in peace with the new scheduling options. The new Schedule feature allows you to display any module at specific dates in the future, or to disable any module automatically at a certain time and date. Imagine the possibilities and peace of mind...designing your promotional banners or sliders, ..",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/gallery/wing-1060x400w.jpg",
+    },
+  },
+  {
+    id: 5,
+    date: "15 Sep",
+    post: "Journal 3 blog has been greatly improved and it now comes with the most advanced set of typography tools, including custom drop-cap support as well as optional&nbsp;newspaper-like fluid columns. You can break up the page in up to 4 columns and change the configuration per breakpoint for the best article ..",
+    title: "Welcome to Journal Blog",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/gallery/photographer-1060x400w.jpg",
+    },
+  },
+];
+
+let brand = [
+  {
+    id: 1,
+    name: "Sony",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/sony_logo-150x150w.jpg",
+    },
+  },
+  {
+    id: 2,
+    name: "NY Fashion",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/fashion-150x150.jpg",
+    },
+  },
+  {
+    id: 3,
+    name: "SunGlasses",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/sunglasses-150x150.png",
+    },
+  },
+  {
+    id: 4,
+    name: "Canon",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/canon_logo-150x150w.jpg",
+    },
+  },
+  {
+    id: 5,
+    name: "Eriksson",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/erikson-150x150.jpg",
+    },
+  },
+  {
+    id: 6,
+    name: "Sarah Bloom",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/sarah-cosmetics-150x150.jpg",
+    },
+  },
+  {
+    id: 7,
+    name: "Apple",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/apple_logo-150x150h.jpg",
+    },
+  },
+  {
+    id: 8,
+    name: "Hipster",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/hipster-150x150.jpg",
+    },
+  },
+  {
+    id: 9,
+    name: "Sarah Bell",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/sarah-beauty-150x150.jpg",
+    },
+  },
+  {
+    id: 10,
+    name: "HP",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/hp_logo-150x150w.jpg",
+    },
+  },
+  {
+    id: 11,
+    name: "Chic D'or",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/chic-150x150.jpg",
+    },
+  },
+  {
+    id: 12,
+    name: "Olivia Smith",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/olivia-fashion-150x150.jpg",
+    },
+  },
+  {
+    id: 14,
+    name: "Awesome Brand",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/awesome-150x150.jpg",
+    },
+  },
+  {
+    id: 15,
+    name: "Palm",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/palm_logo-150x150w.jpg",
+    },
+  },
+  {
+    id: 16,
+    name: "Melissa Johnsson",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/mellisa-150x150.jpg",
+    },
+  },
+  {
+    id: 17,
+    name: "HTC",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/htc_logo-150x150w.jpg",
+    },
+  },
+  {
+    id: 18,
+    name: "Super Brand",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/superbrand-150x150.jpg",
+    },
+  },
+  {
+    id: 19,
+    name: "Fort Cane",
+    image: {
+      a: "https://www.journal-theme.com/11/image/cache/catalog/journal3/brands/FC-fashion-150x150.jpg",
+    },
+  },
+];
+
 let idCounter = 105;
 
 app.get("/featured", (req, res) => {
   res.send(featured);
+});
+app.get("/brand", (req, res) => {
+  res.send(brand);
+});
+app.get("/blog", (req, res) => {
+  res.send(blog);
 });
 app.get("/category", (req, res) => {
   res.send(category);
