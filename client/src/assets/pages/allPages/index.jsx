@@ -10,11 +10,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 import { Navigation, FreeMode, Thumbs } from "swiper";
-import { Modal } from "antd";
-import axios from 'axios'
+import { Modal, message } from "antd";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 const AllProducts = () => {
+  const [messageApi, contextHolder] = message.useMessage();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [id, setId] = useState("");
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -27,9 +28,32 @@ const AllProducts = () => {
     dispatch(cardAction("allProduct"));
   }, []);
 
-  const wishList = () => {
-    dispatch(addToFavoritesAction(modalData));
+  const warning = () => {
+    messageApi.open({
+      type: "warning",
+      content: "Already Added",
+    });
   };
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Was Added",
+    });
+  };
+
+  let arr = JSON.parse(localStorage.getItem("wishList")) ?? [];
+
+  const handleAddToWishList = () => {
+    if (!arr.find((q) => q.id === modalData.id)) {
+      arr.push(modalData);
+      localStorage.setItem("wishList", JSON.stringify(arr));
+      dispatch(addToFavoritesAction(modalData));
+      success();
+    } else {
+      warning();
+    }
+  };
+
   const showModal = async (e) => {
     setId(e.target.id);
     let response = await axios.get(
@@ -55,6 +79,7 @@ const AllProducts = () => {
         padding: "0 6%",
       }}
     >
+      {contextHolder}
       <Modal
         style={{ textAlign: "center" }}
         title={modalData?.ProductName}
@@ -117,7 +142,7 @@ const AllProducts = () => {
         </p>
         <button
           onClick={() => {
-            wishList();
+            handleAddToWishList();
           }}
         >
           Add to WishList

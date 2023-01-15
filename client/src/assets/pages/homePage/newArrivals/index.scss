@@ -1,14 +1,17 @@
 .cardsSec2 {
-    width: 100%;
-    gap: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3%;
-    padding-bottom: 4%;
+  width: 100%;
+  gap: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  padding-bottom: 4%;
+  @media only screen and (max-width: 992px) {
+    flex-wrap: wrap;
+  }
 
-    a {
-        text-decoration: underline;
-        color: rgb(101, 181, 181);
-    }
+  a {
+    text-decoration: underline;
+    color: rgb(101, 181, 181);
+  }
 }

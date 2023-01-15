@@ -10,15 +10,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 import Loading from "../../../../components/loading";
-import {
-  cardAction,
-  wishListAction,
-} from "../../../redux/action/homePageCard.action";
-import { Modal } from "antd";
+import { cardAction } from "../../../redux/action/homePageCard.action";
+import { Modal, message } from "antd";
 import axios from "axios";
 import { addToFavoritesAction } from "../../../redux/action/favorite.action";
 
 const Featured = () => {
+  const [messageApi, contextHolder] = message.useMessage();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [id, setId] = useState("");
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -32,6 +30,21 @@ const Featured = () => {
     dispatch(cardAction("featured"));
   }, []);
 
+  const warning = () => {
+    messageApi.open({
+      type: "warning",
+      content: "Already Added",
+    });
+  };
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Was Added",
+    });
+  };
+
+  let arr = JSON.parse(localStorage.getItem("wishList")) ?? [];
+
   const showModal = async (e) => {
     setId(e.target.id);
     let response = await axios.get(
@@ -40,18 +53,32 @@ const Featured = () => {
     setModalData(await response.data);
     setIsModalOpen(true);
   };
-  const wishList = () => {
-    dispatch(addToFavoritesAction(modalData));
+
+  const handleAddToWishList = () => {
+    if (!arr.find((q) => q.id === modalData.id)) {
+      arr.push(modalData);
+      localStorage.setItem("wishList", JSON.stringify(arr));
+      dispatch(addToFavoritesAction(modalData));
+      success();
+    } else {
+      warning();
+    }
   };
+  // const wishList = () => {
+  //   arr.push(modalData);
+  //   localStorage.setItem("wishList", JSON.stringify(arr));
+  //   dispatch(addToFavoritesAction(modalData));
+  // };
   const handleOk = () => {
     setIsModalOpen(false);
   };
   const handleCancel = () => {
     setIsModalOpen(false);
   };
-  console.log(favorites);
+
   return (
     <div className="featured">
+      {contextHolder}
       <Modal
         style={{ textAlign: "center" }}
         title={modalData?.ProductName}
@@ -114,7 +141,7 @@ const Featured = () => {
         </p>
         <button
           onClick={() => {
-            wishList();
+            handleAddToWishList();
           }}
         >
           Add to WishList

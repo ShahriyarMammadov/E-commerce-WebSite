@@ -1,13 +1,34 @@
 .featured {
   width: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 3%;
   position: relative;
+  .swiper-wrapper {
+    width: 480px !important;
+  }
 
-  @media only screen and (max-width: 992px) {
-    flex-direction: column !important;
+  .swiper-button-next,
+  .swiper-button-prev {
+    @media only screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+  .swiper-slide {
+    @media only screen and (max-width: 992px) {
+      width: 262px !important;
+    }
+  }
+  .swiper-wrapper {
+    @media only screen and (max-width: 992px) {
+      display: flex !important;
+      width: 100% !important;
+    }
+  }
+  .swiper-pagination {
+    @media only screen and (max-width: 992px) {
+      display: none !important;
+    }
   }
 
   a {

@@ -1,14 +1,34 @@
 .bestSellers {
-    width: 100%;
-    gap: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3%;
-    padding-bottom: 4%;
-
-    a {
-        text-decoration: underline;
-        color: rgb(101, 181, 181);
+  width: 100%;
+  gap: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  padding-bottom: 4%;
+  @media only screen and (max-width: 992px) {
+    flex-wrap: wrap;
+  }
+  a {
+    text-decoration: underline;
+    color: rgb(101, 181, 181);
+  }
+  @media only screen and (max-width: 992px) {
+    .swiper-slide {
+      @media only screen and (max-width: 992px) {
+        width: 10px !important;
+      }
     }
+    .swiper-wrapper {
+      @media only screen and (max-width: 992px) {
+        width: 100% !important;
+        background-color: rebeccapurple !important;
+      }
+    }
+    .swiper-pagination {
+      @media only screen and (max-width: 992px) {
+        display: none !important;
+      }
+    }
+  }
 }

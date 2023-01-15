@@ -1,11 +1,15 @@
 .specialDeals {
   width: 100%;
-  gap: 40px;
+  gap: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 3%;
   padding-bottom: 4%;
+
+  @media only screen and (max-width: 992px) {
+    flex-wrap: wrap;
+  }
 
   a {
     text-decoration: underline;
@@ -13,7 +17,7 @@
   }
 }
 .ant-card {
-    overflow: hidden;
+  overflow: hidden;
   &:hover {
     img {
       transform: scale(1.2);

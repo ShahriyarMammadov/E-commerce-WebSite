@@ -3,9 +3,8 @@ header {
   font-weight: 800 !important;
 
   #headerTop {
-    background-color: #fcfcfc;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-size: 12px;
 
@@ -20,6 +19,9 @@ header {
       i:hover {
         cursor: pointer;
         color: rgb(196, 54, 54);
+      }
+      @media only screen and (max-width: 992px) {
+        display: none;
       }
     }
 
@@ -43,6 +45,23 @@ header {
       a:hover,
       button:hover {
         color: rgb(196, 54, 54);
+      }
+      @media only screen and (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    .responseIcons {
+      color: grey;
+      display: none;
+      div {
+        display: flex;
+        gap: 10%;
+      }
+      gap: 4%;
+      width: 30%;
+      @media only screen and (max-width: 992px) {
+        display: flex;
       }
     }
   }
@@ -101,6 +120,17 @@ header {
       z-index: 99;
     }
 
+    #userIcon {
+      @media only screen and (max-width: 992px) {
+        display: none;
+      }
+    }
+    #menu {
+      display: none;
+      @media only screen and (max-width: 992px) {
+        display: inline;
+      }
+    }
     .dropdown {
       button {
         font-size: 15px;
@@ -133,6 +163,9 @@ header {
       width: 20%;
       display: flex;
       gap: 10%;
+      @media only screen and (max-width: 992px) {
+        display: none;
+      }
 
       i {
         padding-left: 5px;

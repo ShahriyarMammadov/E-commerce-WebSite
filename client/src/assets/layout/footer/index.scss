@@ -1,7 +1,26 @@
 footer {
   padding: 2% 5%;
   display: flex;
-
+  flex-direction: row;
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+  }
+  .lefts {
+    display: flex;
+    width: 50%;
+    @media only screen and (max-width: 992px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  .rights {
+    display: flex;
+    width: 50%;
+    @media only screen and (max-width: 992px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
   .journal {
     margin-top: -20px;
 
@@ -44,8 +63,11 @@ footer {
 
   .customer,
   .account {
+    padding-bottom: 4%;
     margin-left: 6%;
-
+    @media only screen and (max-width: 992px) {
+      width: 45%;
+    }
     h3 {
       font-size: 30px;
     }
@@ -73,7 +95,7 @@ footer {
   .newsLetter {
     margin-left: 10%;
     margin-top: 1.5%;
-    width: 25%;
+    width: 50%;
 
     h3 {
       font-size: 30px;

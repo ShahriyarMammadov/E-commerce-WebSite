@@ -10,7 +10,7 @@ import health from "./images/catalog_health.jpg";
 import footWear from "./images/catalog_footwear.jpg";
 import food from "./images/catalog_food.jpg";
 import { useDispatch, useSelector } from "react-redux";
-import { Modal, Row, message } from "antd";
+import { Modal, message, Button, Drawer, Radio, Space } from "antd";
 import { Input } from "antd";
 import axios from "axios";
 import { searchAction } from "../../redux/action/homePageCard.action";
@@ -19,18 +19,30 @@ const { Search } = Input;
 
 const Header = () => {
   const [messageApi, contextHolder] = message.useMessage();
+  const [first, setFirst] = useState("");
+  const [open, setOpen] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const GetData = useSelector((state) => state.cardReducer);
+  const dispatch = useDispatch();
+
+  const [placement, setPlacement] = useState("left");
+  const showDrawer = () => {
+    setOpenDrawer(true);
+  };
+  const onClose = () => {
+    setOpenDrawer(false);
+  };
+  const onChange = (e) => {
+    setOpenDrawer(e.target.value);
+  };
+
   const error = () => {
     messageApi.open({
       type: "error",
       content: "input is empty!!",
     });
   };
-
-  const [first, setFirst] = useState("");
-  const [open, setOpen] = useState(false);
-
-  const GetData = useSelector((state) => state.cardReducer);
-  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     localStorage.setItem("exchange", e.target.value);
@@ -72,6 +84,28 @@ const Header = () => {
 
   return (
     <header>
+      <Drawer
+        title="Menu"
+        placement={placement}
+        closable={false}
+        onClose={onClose}
+        open={openDrawer}
+        key={placement}
+        style={{
+          fontSize: "18px",
+        }}
+      >
+        <p>
+          All Departments{" "}
+          <button style={{ backgroundColor: "red", color: "white" }}>
+            NEW
+          </button>
+        </p>
+        <p>About Us</p>
+        <p>Blog</p>
+        <p>FAQ</p>
+      </Drawer>
+
       {contextHolder}
       <div id="headerTop">
         <Modal
@@ -117,6 +151,17 @@ const Header = () => {
           <i className="fa-brands fa-pinterest"></i>
           <i className="fa-brands fa-square-google-plus"></i>
           <i className="fa-brands fa-youtube"></i>
+        </div>
+
+        <div className="responseIcons">
+          <div className="div">
+            <i class="fa-solid fa-user"></i>
+            <span>LOGIN</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-users"></i>
+            <span>REGISTER</span>
+          </div>
         </div>
         <div className="dropdown">
           <Select
@@ -401,7 +446,8 @@ const Header = () => {
           </Link>
         </div>
         <div className="right">
-          <i className="fa-regular fa-user"></i>
+          <i class="fa-solid fa-bars" id="menu" onClick={showDrawer}></i>
+          <i className="fa-regular fa-user" id="userIcon"></i>
           <i
             className="fa-solid fa-magnifying-glass"
             onClick={() => setOpen(true)}

@@ -5,7 +5,6 @@ body {
   max-width: 1640px;
   margin: 0 auto !important;
   font-family: "Hind Madurai" !important;
-  background-color: rebeccapurple !important;
 }
 
 #carousel {
@@ -103,7 +102,6 @@ body {
     }
   }
   @media only screen and (max-width: 992px) {
-    background-color: rebeccapurple;
     width: 100%;
   }
 }
@@ -165,8 +163,16 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 10%;
   padding: 3% 0;
+
+  .sec3Div {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    @media only screen and (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
 
   h3 {
     color: #fcfcfc;
@@ -213,13 +219,21 @@ body {
   .sec5Card {
     display: flex;
     gap: 2%;
+    @media only screen and (max-width: 992px) {
+      flex-direction: column;
+    }
 
     .left {
       margin-top: 1.5%;
       margin-left: 10%;
-      width: 80%;
+      width: 50%;
       overflow: hidden;
       transform: 1;
+
+      @media only screen and (max-width: 992px) {
+        width: 70%;
+        margin: 0 auto;
+      }
       img {
         width: 100%;
         transition: all 1s;
@@ -240,9 +254,13 @@ body {
     }
     .rightCard {
       margin-top: 1.5%;
-      .cards {
+      .card {
         display: flex;
-        gap: 2%;
+        gap: 10%;
+
+        @media only screen and (max-width: 992px) {
+          justify-content: center;
+        }
       }
       .text {
         p {
@@ -274,6 +292,30 @@ body {
       margin-top: 1%;
       height: 4px;
       background-color: #ef5042;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      @media only screen and (max-width: 992px) {
+        display: none;
+      }
+    }
+    .swiper-slide {
+      @media only screen and (max-width: 992px) {
+        width: 430px !important;
+      }
+    }
+    .swiper-wrapper {
+      @media only screen and (max-width: 992px) {
+        display: flex !important;
+        width: 100% !important;
+      }
+    }
+    .swiper-pagination {
+      @media only screen and (max-width: 992px) {
+        display: none !important;
+      }
     }
   }
 }

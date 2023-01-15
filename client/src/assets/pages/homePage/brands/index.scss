@@ -21,3 +21,28 @@
     }
   }
 }
+.blogCards {
+  @media only screen and (max-width: 992px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      @media only screen and (max-width: 992px) {
+        display: none;
+      }
+    }
+    .swiper-slide {
+      @media only screen and (max-width: 992px) {
+        width: 160px !important;
+      }
+    }
+    .swiper-wrapper {
+      @media only screen and (max-width: 992px) {
+        width: 100% !important;
+      }
+    }
+    .swiper-pagination {
+      @media only screen and (max-width: 992px) {
+        display: none !important;
+      }
+    }
+  }
+}

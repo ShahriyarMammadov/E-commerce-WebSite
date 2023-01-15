@@ -1,4 +1,6 @@
 .allData{
-    background-color: rebeccapurple;
     display: flex !important;
+    @media only screen and (max-width: 992px){
+        flex-wrap: wrap;
+    }
 }

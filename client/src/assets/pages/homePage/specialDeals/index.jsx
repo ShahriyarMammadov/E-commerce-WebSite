@@ -12,10 +12,11 @@ import "swiper/css/pagination";
 import { addToFavoritesAction } from "../../../redux/action/favorite.action";
 import "swiper/css";
 import { Navigation, FreeMode, Thumbs } from "swiper";
-import { Modal } from "antd";
+import { Modal, message } from "antd";
 import axios from "axios";
 
 const SpecialDeals = () => {
+  const [messageApi, contextHolder] = message.useMessage();
   const GetData = useSelector((state) => state.cardReducer);
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,6 +29,32 @@ const SpecialDeals = () => {
     dispatch(cardAction("specialDelas"));
   }, []);
 
+  const warning = () => {
+    messageApi.open({
+      type: "warning",
+      content: "Already Added",
+    });
+  };
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Was Added",
+    });
+  };
+
+  let arr = JSON.parse(localStorage.getItem("wishList")) ?? [];
+
+  const handleAddToWishList = () => {
+    if (!arr.find((q) => q.id === modalData.id)) {
+      arr.push(modalData);
+      localStorage.setItem("wishList", JSON.stringify(arr));
+      dispatch(addToFavoritesAction(modalData));
+      success();
+    } else {
+      warning();
+    }
+  };
+
   const showModal = async (e) => {
     setId(e.target.id);
     let response = await axios.get(
@@ -36,9 +63,7 @@ const SpecialDeals = () => {
     setModalData(await response.data);
     setIsModalOpen(true);
   };
-  const wishList = () => {
-    dispatch(addToFavoritesAction(modalData));
-  };
+
   const handleOk = () => {
     setIsModalOpen(false);
   };
@@ -48,6 +73,7 @@ const SpecialDeals = () => {
 
   return (
     <div>
+      {contextHolder}
       <div className="specialDeals">
         <Modal
           style={{ textAlign: "center" }}
@@ -111,7 +137,7 @@ const SpecialDeals = () => {
           </p>
           <button
             onClick={() => {
-              wishList();
+              handleAddToWishList();
             }}
           >
             Add to WishList
@@ -124,8 +150,8 @@ const SpecialDeals = () => {
           GetData?.data?.map((data) => {
             return (
               <Card
-                loading={GetData.loading}
-                key={data.id}
+                loading={GetData?.loading}
+                key={data?.id}
                 hoverable
                 style={{
                   width: 300,
@@ -134,16 +160,16 @@ const SpecialDeals = () => {
                 cover={
                   <img
                     alt="example"
-                    id={data.id}
-                    src={data.image.a}
+                    id={data?.id}
+                    src={data?.image?.a}
                     onClick={(id) => {
                       showModal(id);
                     }}
                   />
                 }
               >
-                <a href="#">{data.productBrand}</a>
-                <Meta title={data.ProductName} description={data.Price} />
+                <a href="#">{data?.productBrand}</a>
+                <Meta title={data?.ProductName} description={data?.Price} />
               </Card>
             );
           })

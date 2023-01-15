@@ -23,9 +23,9 @@ function App() {
           <Route path="/newArrivals" element={<NewArrivals />} />
           <Route path="/specialDeals" element={<SpecialDeals />} />
           <Route path="/wishList" element={<WishList />} />
-          <Route path="*" element={<ErrorPage />}></Route>
           <Route path="/detailPage/:id" element={<DetailPage />} />
           <Route path="/allProducts" element={<AllProducts />} />
+          <Route path="*" element={<ErrorPage />}></Route>
         </Route>
       </Routes>
       <Footer />

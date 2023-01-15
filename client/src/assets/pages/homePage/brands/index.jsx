@@ -17,7 +17,7 @@ const BrandsComponent = () => {
   }, []);
 
   return (
-    <div>
+    <div className="blogCards">
       <Swiper
         slidesPerView={10}
         spaceBetween={0}
@@ -28,7 +28,7 @@ const BrandsComponent = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        <div className="blogCards">
+        <div>
           {data?.map((e) => {
             return (
               <SwiperSlide key={e.id}>

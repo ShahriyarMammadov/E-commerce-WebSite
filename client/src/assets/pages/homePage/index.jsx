@@ -80,25 +80,29 @@ const HomePage = () => {
       </section>
 
       <section id="section3">
-        <div className="shipping">
-          <i className="fa-solid fa-truck-fast"></i>
-          <h3>Free Shipping</h3>
-          <p>Free delivery over $100</p>
+        <div className="sec3Div">
+          <div className="shipping">
+            <i className="fa-solid fa-truck-fast"></i>
+            <h3>Free Shipping</h3>
+            <p>Free delivery over $100</p>
+          </div>
+          <div className="return">
+            <i className="fa-solid fa-rotate-left"></i>
+            <h3>Free Returns</h3>
+            <p>Hassle free returns</p>
+          </div>
         </div>
-        <div className="return">
-          <i className="fa-solid fa-rotate-left"></i>
-          <h3>Free Returns</h3>
-          <p>Hassle free returns</p>
-        </div>
-        <div className="shopping">
-          <i className="fa-solid fa-lock"></i>
-          <h3>Secure Shopping Shipping</h3>
-          <p>Best security features</p>
-        </div>
-        <div className="blocks">
-          <i className="fa-solid fa-square"></i>
-          <h3>Unlimited Blocks</h3>
-          <p>Any content, any page</p>
+        <div className="sec3Div">
+          <div className="shopping">
+            <i className="fa-solid fa-lock"></i>
+            <h3>Secure Shopping Shipping</h3>
+            <p>Best security features</p>
+          </div>
+          <div className="blocks">
+            <i className="fa-solid fa-square"></i>
+            <h3>Unlimited Blocks</h3>
+            <p>Any content, any page</p>
+          </div>
         </div>
       </section>
 
@@ -124,33 +128,37 @@ const HomePage = () => {
 
           <div className="rightCard">
             <div className="cards">
-              <div className="card1">
-                <img src={card1} alt="" />
-                <div className="text">
-                  <h6>Body Oil</h6>
-                  <p>$100.00</p>
+              <div className="card">
+                <div className="card1">
+                  <img src={card1} alt="" />
+                  <div className="text">
+                    <h6>Body Oil</h6>
+                    <p>$100.00</p>
+                  </div>
+                </div>
+                <div className="card1">
+                  <img src={card3} alt="" />
+                  <div className="text">
+                    <h6>Body Oil</h6>
+                    <p>$100.00</p>
+                  </div>
                 </div>
               </div>
-              <div className="card1">
-                <img src={card3} alt="" />
-                <div className="text">
-                  <h6>Body Oil</h6>
-                  <p>$100.00</p>
+              <div className="card">
+                <div className="card1">
+                  <img src={card4} alt="" />
+                  <div className="text">
+                    <h6>Body Oil</h6>
+                    <p>$100.00</p>
+                  </div>
                 </div>
-              </div>
-              <div className="card1">
-                <img src={card4} alt="" />
-                <div className="text">
-                  <h6>Body Oil</h6>
-                  <p>$100.00</p>
+                <div className="card1">
+                  <img src={card2} alt="" />
+                  <div className="text">
+                    <h6>Body Oil</h6>
+                    <p>$100.00</p>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="card1">
-              <img src={card2} alt="" />
-              <div className="text">
-                <h6>Body Oil</h6>
-                <p>$100.00</p>
               </div>
             </div>
           </div>

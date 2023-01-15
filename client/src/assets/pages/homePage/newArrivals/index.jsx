@@ -11,11 +11,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
-import { Modal } from "antd";
+import { Modal, message } from "antd";
 import axios from "axios";
 import { addToFavoritesAction } from "../../../redux/action/favorite.action";
 
 const NewArrivals = () => {
+  const [messageApi, contextHolder] = message.useMessage();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [id, setId] = useState("");
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -36,17 +37,43 @@ const NewArrivals = () => {
     setModalData(await response.data);
     setIsModalOpen(true);
   };
-  const wishList = () => {
-    dispatch(addToFavoritesAction(modalData));
+
+  const warning = () => {
+    messageApi.open({
+      type: "warning",
+      content: "Already Added",
+    });
   };
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Was Added",
+    });
+  };
+
+  let arr = JSON.parse(localStorage.getItem("wishList")) ?? [];
+
+  const handleAddToWishList = (customer) => {
+    if (!arr.find((q) => q.id === modalData.id)) {
+      arr.push(modalData);
+      localStorage.setItem("wishList", JSON.stringify(arr));
+      dispatch(addToFavoritesAction(modalData));
+      success();
+    } else {
+      warning();
+    }
+  };
+
   const handleOk = () => {
     setIsModalOpen(false);
   };
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
   return (
-    <div>
+    <div className="new">
+      {contextHolder}
       <Modal
         style={{ textAlign: "center" }}
         title={modalData?.ProductName}
@@ -109,7 +136,7 @@ const NewArrivals = () => {
         </p>
         <button
           onClick={() => {
-            wishList();
+            handleAddToWishList();
           }}
         >
           Add to WishList

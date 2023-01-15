@@ -10,22 +10,30 @@ import {
 import { message, Popconfirm } from "antd";
 
 const WishList = () => {
+  let arr = JSON.parse(localStorage.getItem("wishList")) ?? [];
   const favorites = useSelector((state) => state.favoritesReducer);
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
-    dispatch(removeFromFavoritesAction(id));
+    if (arr?.find((q) => q?.id === id)) {
+      let delData = arr?.filter((element) => element?.id !== id);
+      arr = delData;
+      localStorage.setItem("wishList", JSON.stringify(arr));
+      dispatch(removeFromFavoritesAction(id));
+    }
   };
 
   const handleAllRemove = () => {
+    arr = [];
+    localStorage.setItem("wishList", JSON.stringify(arr));
     dispatch(removeAllFavoritesAction());
   };
+
   const confirm = (e) => {
     handleDelete(e);
     message.success("Deleted");
   };
   const cancel = (e) => {
-    console.log(e);
     message.error("It Was Not Deleted");
   };
   return (
@@ -45,23 +53,23 @@ const WishList = () => {
         }}
       >
         <div className="wishCard">
-          {favorites.length < 1 ? (
+          {arr?.length < 1 ? (
             <h1 style={{ fontSize: "28px" }}>it is empty</h1>
           ) : (
-            favorites?.map((e) => {
+            arr?.map((e) => {
               return (
                 <>
                   <Card
-                    key={e.id}
+                    key={e?.id}
                     hoverable
                     style={{
                       width: 300,
                       textAlign: "center",
                     }}
-                    cover={<img alt="example" src={e.image.a} />}
+                    cover={<img alt="example" src={e?.image?.a} />}
                   >
-                    <a href="#">{e.productBrand}</a>
-                    <Meta title={e.ProductName} description={e.Price} />
+                    <a href="#">{e?.productBrand}</a>
+                    <Meta title={e?.ProductName} description={e?.Price} />
                     <Popconfirm
                       title="Delete the task"
                       description="Are you sure to delete this task?"
@@ -72,7 +80,9 @@ const WishList = () => {
                       okText="yes"
                       cancelText="No"
                     >
-                      <a href="#">Delete</a>
+                      <a href="#" id={e.id}>
+                        Delete
+                      </a>
                     </Popconfirm>
                   </Card>
                 </>
