@@ -1,0 +1,38 @@
+.featured {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  position: relative;
+
+  a {
+    text-decoration: underline;
+    color: rgb(101, 181, 181);
+  }
+  p {
+    text-align: center;
+    color: white;
+    position: absolute;
+    z-index: 9;
+    background-color: green;
+    width: 70px;
+    transform: rotate(-20deg);
+  }
+
+  .swiper-pagination-bullets {
+    top: 96% !important;
+  }
+}
+.ant-modal-footer {
+  display: none !important;
+}
+.ant-modal-content {
+  button {
+    margin-top: 4%;
+    border-radius: 50px;
+    padding: 1.5%;
+    color: white;
+    background-color: rgb(16, 16, 125);
+  }
+}

@@ -446,11 +446,15 @@ let brand = [
     },
   },
 ];
+let wish = [];
 
 let idCounter = 105;
 
 app.get("/featured", (req, res) => {
   res.send(featured);
+});
+app.get("/wish", (req, res) => {
+  res.send(wish);
 });
 app.get("/brand", (req, res) => {
   res.send(brand);
@@ -475,6 +479,19 @@ app.get("/featured/:id", (req, res) => {
   const id = req.params.id;
 
   const selectProducts = featured.find((product) => product.id == id);
+
+  if (selectProducts) {
+    res.send(selectProducts);
+    res.status(200);
+  } else {
+    console.log("there is no such user");
+    res.status(404).json({ message: "there is no such user.." });
+  }
+});
+app.get("/wish/:id", (req, res) => {
+  const id = req.params.id;
+
+  const selectProducts = wish?.find((product) => product.id == id);
 
   if (selectProducts) {
     res.send(selectProducts);
@@ -546,28 +563,35 @@ app.delete("/prod/:id", (req, res) => {
   prod = prod.filter((q) => q.id !== id);
   res.status(200).json({ message: "succesfully deleted" });
 });
+app.delete("/wish/:id", (req, res) => {
+  const id = +req.params.id;
 
-app.post("/prod", (req, res) => {
-  console.log(req);
-  const prodObj = {
-    id: idCounter++,
-    prodname: req.body?.a,
-    PRICE: req.body?.price,
-    images: req.body?.images,
-  };
-  prod.push(prodObj);
+  prod = wish.filter((q) => q.id !== id);
+  res.status(200).json({ message: "succesfully deleted" });
 });
 
-app.put("/prod/:id", (req, res) => {
+app.post("/wish", (req, res) => {
+  console.log(req);
+  const prodObj = {
+    id: req.id,
+    productBrand: req?.productBrand,
+    price: req?.price,
+    images: req?.images?.a,
+    productName: req?.ProductName
+  };
+  wish.push(prodObj);
+});
+
+app.put("/wish/:id", (req, res) => {
   const { id } = +req.params;
-  prod = prod.filter((elem) => elem.id !== id);
+  prod = wish.filter((elem) => elem.id !== id);
 
   const updatedUser = {
     id: id,
     name: req.body.name,
     username: req.body.username,
   };
-  prod.push(updatedUser);
+  wish.push(updatedUser);
 });
 
 app.listen(port, () => {
