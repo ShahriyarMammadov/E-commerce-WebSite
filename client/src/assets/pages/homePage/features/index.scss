@@ -6,6 +6,10 @@
   margin-top: 3%;
   position: relative;
 
+  @media only screen and (max-width: 992px) {
+    flex-direction: column !important;
+  }
+
   a {
     text-decoration: underline;
     color: rgb(101, 181, 181);

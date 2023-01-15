@@ -7,50 +7,79 @@ import {
   removeAllFavoritesAction,
   removeFromFavoritesAction,
 } from "../../redux/action/favorite.action";
+import { message, Popconfirm } from "antd";
 
 const WishList = () => {
   const favorites = useSelector((state) => state.favoritesReducer);
   const dispatch = useDispatch();
+
   const handleDelete = (id) => {
     dispatch(removeFromFavoritesAction(id));
   };
+
   const handleAllRemove = () => {
     dispatch(removeAllFavoritesAction());
+  };
+  const confirm = (e) => {
+    handleDelete(e);
+    message.success("Deleted");
+  };
+  const cancel = (e) => {
+    console.log(e);
+    message.error("It Was Not Deleted");
   };
   return (
     <div className="favcards">
       <button
-        style={{ backgroundColor: "red", color: "white", padding: "2%" }}
+        id="delBtn"
         onClick={() => {
           handleAllRemove();
         }}
       >
-        All Delete WishLust elements
+        Delete All
       </button>
-      <div>
-        {favorites?.map((e) => {
-          return (
-            <Card
-              key={e.id}
-              hoverable
-              style={{
-                width: 300,
-                textAlign: "center",
-              }}
-              cover={<img alt="example" src={e.image.a} />}
-            >
-              <a href="#">{e.productBrand}</a>
-              <Meta title={e.ProductName} description={e.Price} />
-              <button
-                onClick={() => {
-                  handleDelete(e.id);
-                }}
-              >
-                Delete
-              </button>
-            </Card>
-          );
-        })}
+      <div
+        style={{
+          display: "flex",
+          gap: "6%",
+        }}
+      >
+        <div className="wishCard">
+          {favorites.length < 1 ? (
+            <h1 style={{ fontSize: "28px" }}>it is empty</h1>
+          ) : (
+            favorites?.map((e) => {
+              return (
+                <>
+                  <Card
+                    key={e.id}
+                    hoverable
+                    style={{
+                      width: 300,
+                      textAlign: "center",
+                    }}
+                    cover={<img alt="example" src={e.image.a} />}
+                  >
+                    <a href="#">{e.productBrand}</a>
+                    <Meta title={e.ProductName} description={e.Price} />
+                    <Popconfirm
+                      title="Delete the task"
+                      description="Are you sure to delete this task?"
+                      onConfirm={() => {
+                        confirm(e.id);
+                      }}
+                      onCancel={cancel}
+                      okText="yes"
+                      cancelText="No"
+                    >
+                      <a href="#">Delete</a>
+                    </Popconfirm>
+                  </Card>
+                </>
+              );
+            })
+          )}
+        </div>
       </div>
     </div>
   );

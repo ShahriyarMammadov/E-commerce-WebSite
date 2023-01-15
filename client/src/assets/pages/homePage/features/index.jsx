@@ -49,7 +49,7 @@ const Featured = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
-  console.log(favorites)
+  console.log(favorites);
   return (
     <div className="featured">
       <Modal

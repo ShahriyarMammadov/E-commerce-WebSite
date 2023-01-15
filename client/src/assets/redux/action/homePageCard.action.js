@@ -28,7 +28,6 @@ export const wishListAction = (data) => {
   };
 };
 export const searchAction = (data) => {
-  console.log(data)
   return {
     type: "SEARCH",
     payload: data,

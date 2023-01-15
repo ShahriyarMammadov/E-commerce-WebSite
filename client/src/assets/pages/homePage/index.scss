@@ -5,6 +5,7 @@ body {
   max-width: 1640px;
   margin: 0 auto !important;
   font-family: "Hind Madurai" !important;
+  background-color: rebeccapurple !important;
 }
 
 #carousel {
@@ -14,7 +15,6 @@ body {
     width: 150px;
     height: 650px;
     background-size: cover;
-
     h1 {
       font-size: 65px;
       font-weight: 600;
@@ -101,6 +101,10 @@ body {
         color: black;
       }
     }
+  }
+  @media only screen and (max-width: 992px) {
+    background-color: rebeccapurple;
+    width: 100%;
   }
 }
 

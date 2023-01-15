@@ -2,7 +2,7 @@ let initialState = {
   loading: true,
   error: undefined,
   data: undefined,
-  searchData: [],
+  searchData: undefined,
 };
 export const cardReducer = (state = initialState, action) => {
   switch (action.type) {

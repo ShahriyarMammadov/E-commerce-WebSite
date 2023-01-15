@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./index.scss";
-import { color, Heading, Select, Stack } from "@chakra-ui/react";
+import { Heading, Select, Stack } from "@chakra-ui/react";
 import { NavLink, Link } from "react-router-dom";
 import { Card, CardBody } from "@chakra-ui/react";
 import fashion from "./images/catalog_fashion.jpg";
@@ -10,13 +10,22 @@ import health from "./images/catalog_health.jpg";
 import footWear from "./images/catalog_footwear.jpg";
 import food from "./images/catalog_food.jpg";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Modal } from "antd";
-import { Input, Space } from "antd";
+import { Modal, Row, message } from "antd";
+import { Input } from "antd";
 import axios from "axios";
 import { searchAction } from "../../redux/action/homePageCard.action";
+import Meta from "antd/es/card/Meta";
 const { Search } = Input;
 
 const Header = () => {
+  const [messageApi, contextHolder] = message.useMessage();
+  const error = () => {
+    messageApi.open({
+      type: "error",
+      content: "input is empty!!",
+    });
+  };
+
   const [first, setFirst] = useState("");
   const [open, setOpen] = useState(false);
 
@@ -36,16 +45,20 @@ const Header = () => {
   };
 
   const onSearch = async (value) => {
-    let js = await axios.get("http://localhost:8000/allProduct");
-    GetData.data = js.data;
-    let sndj = GetData.data.filter((element) => {
-      element.ProductName.toLocaleLowerCase().includes(
-        value.toLocaleLowerCase()
+    if (value === "") {
+      error();
+    } else {
+      let searchData = await axios.get("http://localhost:8000/allProduct");
+      GetData.searchData = searchData.data;
+      let search = GetData.searchData.filter((element) =>
+        element.ProductName.toLocaleLowerCase().includes(
+          value.toLocaleLowerCase()
+        )
       );
-    });
-    console.log(sndj);
-    // dispatch(searchAction(sndj));
+      dispatch(searchAction(search));
+    }
   };
+
   let header = document.getElementById("headerBottom");
   let sticky = header?.offsetTop;
 
@@ -59,9 +72,10 @@ const Header = () => {
 
   return (
     <header>
+      {contextHolder}
       <div id="headerTop">
         <Modal
-          title="Search By Name"
+          title="Search By ProductName"
           centered
           open={open}
           onOk={() => setOpen(false)}
@@ -69,12 +83,32 @@ const Header = () => {
           width={1000}
         >
           <Search
-            placeholder="input search text"
+            placeholder="Search By ProductName. . . ."
             allowClear
             enterButton="Search"
             size="large"
             onSearch={onSearch}
           />
+          <br />
+          {GetData?.searchData?.map((e) => {
+            return (
+              <Link to={`/detailPage/${e.id}`}>
+                <Card
+                  loading={GetData?.loading}
+                  key={e?.id}
+                  hoverable
+                  style={{
+                    width: 300,
+                    textAlign: "center",
+                  }}
+                >
+                  <img id={e?.id} alt="example" src={e?.image?.a} />
+                  <a href="">{e.productBrand}</a>
+                  <Meta title={e.ProductName} description={e.Price} />
+                </Card>
+              </Link>
+            );
+          })}
         </Modal>
         <div className="icons">
           <i className="fa-brands fa-square-facebook"></i>

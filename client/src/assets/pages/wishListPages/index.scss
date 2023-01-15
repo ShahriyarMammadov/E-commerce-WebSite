@@ -1,3 +1,23 @@
-.cardsSec2{
-    display: flex !important;
+#delBtn {
+  margin-left: -100px;
+  background-color: rgb(208, 6, 6);
+  color: white;
+  padding: 10px;
+
+  &:hover {
+    background-color: red;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+
+.favcards {
+  .wishCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    padding: 0 6%;
+  }
+  .ant-card{
+    margin-top: 2%;
+  }
 }
