@@ -5,7 +5,7 @@ import Loading from "../../../../components/loading";
 import { Navigation, FreeMode, Thumbs } from "swiper";
 import "./index.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { cardAction } from "../../../redux/action/homePageCard.action";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
@@ -114,6 +114,7 @@ const NewArrivals = () => {
         >
           Add to WishList
         </button>
+        <Link to={`/detailPage/${id}`}>MORE</Link>
       </Modal>
       <div className="cardsSec2">
         {GetData.Loading ? (

@@ -24,6 +24,23 @@ const DetailPage = () => {
     let response = await axios.get(`http://localhost:8000/bestSellers/${id}`);
     setData(await response.data);
   }, []);
+  useEffect(async () => {
+    let response = await axios.get(`http://localhost:8000/newArrivals/${id}`);
+    setData(await response.data);
+  }, []);
+  useEffect(async () => {
+    let response = await axios.get(`http://localhost:8000/featured/${id}`);
+    setData(await response.data);
+  }, []);
+  useEffect(async () => {
+    let response = await axios.get(`http://localhost:8000/allProduct/${id}`);
+    setData(await response.data);
+  }, []);
+  useEffect(async () => {
+    let response = await axios.get(`http://localhost:8000/specialDelas/${id}`);
+    setData(await response.data);
+  }, []);
+
   const showModal = async () => {
     setIsModalOpen(true);
   };

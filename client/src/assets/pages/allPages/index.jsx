@@ -1,57 +1,60 @@
 import { Card } from "antd";
 import Meta from "antd/es/card/Meta";
 import React, { useEffect, useState } from "react";
-import "./index.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Outlet } from "react-router-dom";
+import { addToFavoritesAction } from "../../redux/action/favorite.action";
+import { cardAction } from "../../redux/action/homePageCard.action";
+import "./index.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, EffectFade, Pagination, FreeMode, Thumbs } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
-import Loading from "../../../../components/loading";
-import {
-  cardAction,
-  wishListAction,
-} from "../../../redux/action/homePageCard.action";
+import { Navigation, FreeMode, Thumbs } from "swiper";
 import { Modal } from "antd";
-import axios from "axios";
-import { addToFavoritesAction } from "../../../redux/action/favorite.action";
+import axios from 'axios'
+import { Link } from "react-router-dom";
 
-const Featured = () => {
+const AllProducts = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [id, setId] = useState("");
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [modalData, setModalData] = useState([]);
-
+  const dispatch = useDispatch();
   const GetData = useSelector((state) => state.cardReducer);
   const favorites = useSelector((state) => state.favoritesReducer);
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(cardAction("featured"));
+    dispatch(cardAction("allProduct"));
   }, []);
 
+  const wishList = () => {
+    dispatch(addToFavoritesAction(modalData));
+  };
   const showModal = async (e) => {
     setId(e.target.id);
     let response = await axios.get(
-      `http://localhost:8000/featured/${e.target.id}`
+      `http://localhost:8000/allProduct/${e.target.id}`
     );
     setModalData(await response.data);
     setIsModalOpen(true);
   };
-  const wishList = () => {
-    dispatch(addToFavoritesAction(modalData));
-  };
+
   const handleOk = () => {
     setIsModalOpen(false);
   };
   const handleCancel = () => {
     setIsModalOpen(false);
   };
-  console.log(favorites)
   return (
-    <div className="featured">
+    <div
+      id="allData"
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "2%",
+        padding: "0 6%",
+      }}
+    >
       <Modal
         style={{ textAlign: "center" }}
         title={modalData?.ProductName}
@@ -121,63 +124,35 @@ const Featured = () => {
         </button>
         <Link to={`/detailPage/${id}`}>MORE</Link>
       </Modal>
-
-      {GetData.loading ? (
-        <Loading />
-      ) : (
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={4}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Navigation, EffectFade, Pagination]}
-          speed={1000}
-          navigation
-        >
-          {GetData?.data?.map((element, i) => {
-            return (
-              <>
-                <SwiperSlide key={element.id}>
-                  {GetData?.featuredData?.map((e) => {
-                    e.gift && <p>{e.gift}</p>;
-                  })}
-                  <Card
-                    loading={GetData.loading}
-                    id={element.id}
-                    hoverable
-                    style={{
-                      width: 300,
-                      textAlign: "center",
-                    }}
-                    cover={
-                      <img
-                        id={element.id}
-                        alt="example"
-                        src={element.image.a}
-                        onClick={(id) => {
-                          showModal(id);
-                        }}
-                      />
-                    }
-                  >
-                    <a href="">{element.productBrand}</a>
-                    <Meta
-                      title={element.ProductName}
-                      description={
-                        localStorage.getItem("exchange") + element.Price
-                      }
-                    />
-                  </Card>
-                </SwiperSlide>
-              </>
-            );
-          })}
-        </Swiper>
-      )}
-      <Outlet />
+      {GetData?.data?.map((data) => {
+        return (
+          <Card
+            loading={GetData.loading}
+            key={data.id}
+            hoverable
+            style={{
+              width: 300,
+              marginTop: "2%",
+              textAlign: "center",
+            }}
+            cover={
+              <img
+                id={data.id}
+                alt="example"
+                src={data.image.a}
+                onClick={(id) => {
+                  showModal(id);
+                }}
+              />
+            }
+          >
+            <a href="#">{data.productBrand}</a>
+            <Meta title={data.ProductName} description={data.Price} />
+          </Card>
+        );
+      })}
     </div>
   );
 };
 
-export default Featured;
+export default AllProducts;

@@ -71,7 +71,7 @@ const HomePage = () => {
           <NavLink to={"/newArrivals"}>New Arrivals</NavLink>
           <NavLink to={"/bestSellers"}>Bestsellers</NavLink>
           <NavLink to={"/specialDeals"}>Special Deals</NavLink>
-          <NavLink to={"/sdf"}>View All</NavLink>
+          <NavLink to={"/allProducts"}>View All</NavLink>
         </div>
 
         <div className="cardsSec2">

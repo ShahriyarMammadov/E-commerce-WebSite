@@ -10,6 +10,7 @@ import SpecialDeals from "./assets/pages/homePage/specialDeals";
 import Featured from "./assets/pages/homePage/features";
 import WishList from "./assets/pages/wishListPages";
 import DetailPage from "./assets/pages/detailPage";
+import AllProducts from "./assets/pages/allPages";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/wishList" element={<WishList />} />
           <Route path="*" element={<ErrorPage />}></Route>
           <Route path="/detailPage/:id" element={<DetailPage />} />
+          <Route path="/allProducts" element={<AllProducts />} />
         </Route>
       </Routes>
       <Footer />

@@ -27,3 +27,10 @@ export const wishListAction = (data) => {
     payload: data,
   };
 };
+export const searchAction = (data) => {
+  console.log(data)
+  return {
+    type: "SEARCH",
+    payload: data,
+  };
+};

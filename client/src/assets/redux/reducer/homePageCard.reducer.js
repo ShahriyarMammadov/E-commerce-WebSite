@@ -2,8 +2,8 @@ let initialState = {
   loading: true,
   error: undefined,
   data: undefined,
+  searchData: [],
 };
-
 export const cardReducer = (state = initialState, action) => {
   switch (action.type) {
     case "PENDING":
@@ -23,6 +23,12 @@ export const cardReducer = (state = initialState, action) => {
       return {
         loading: false,
         data: action.payload,
+      };
+
+    case "SEARCH":
+      return {
+        ...state,
+        searchData: action.payload,
       };
 
     default:
